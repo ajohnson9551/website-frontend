@@ -1,26 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
+import { Whole } from "./spa/Whole";
+import { Home } from "./pages/Home";
+import { DigitRecognition } from "./pages/DigitRecognition";
+import { About } from "./pages/About";
+import { Math } from "./pages/Math";
+import { LunarLander } from "./pages/LunarLander";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<BrowserRouter>
+		<Routes>
+				<Route path="/" element={<Whole />}>
+				<Route index element={<Home />} />
+				<Route path="home" element={<Home />} />
+				<Route path="digitrecognition" element={<DigitRecognition />} />
+				<Route path="lunarlander" element={<LunarLander />} />
+				<Route path="math" element={<Math />} />
+				<Route path="about" element={<About />} />
+				<Route path="*" element={<Home />} />
+			</Route>
+		</Routes>
+		</BrowserRouter>
+	);
 }
 
 export default App;
