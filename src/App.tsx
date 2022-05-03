@@ -1,24 +1,24 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
 import { Whole } from "./spa/Whole";
-import { Home } from "./pages/Home";
-import { DigitRecognition } from "./pages/DigitRecognition";
-import { About } from "./pages/About";
-import { Math } from "./pages/Math";
-import { LunarLander } from "./pages/LunarLander";
+import { HomePage } from "./pages/HomePage";
+import { DigitRecognitionPage } from "./pages/DigitRecognitionPage";
+import { AboutPage } from "./pages/AboutPage";
+import { MathPage } from "./pages/MathPage";
+import { LunarLanderPage } from "./pages/LunarLanderPage";
 
 function App() {
 	return (
 		<BrowserRouter>
 		<Routes>
 				<Route path="/" element={<Whole />}>
-				<Route index element={<Home />} />
-				<Route path="home" element={<Home />} />
-				<Route path="digitrecognition" element={<DigitRecognition />} />
-				<Route path="lunarlander" element={<LunarLander />} />
-				<Route path="math" element={<Math />} />
-				<Route path="about" element={<About />} />
-				<Route path="*" element={<Home />} />
+				<Route index element={<HomePage />} />
+				<Route path="home" element={<HomePage />} />
+				<Route path="digitrecognition" element={<DigitRecognitionPage />} />
+				<Route path="lunarlander" element={<LunarLanderPage />} />
+				<Route path="math" element={<MathPage />} />
+				<Route path="about" element={<AboutPage />} />
+				<Route path="*" element={<HomePage />} />
 			</Route>
 		</Routes>
 		</BrowserRouter>

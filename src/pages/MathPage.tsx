@@ -1,4 +1,4 @@
-export const Math = () => {
+export const MathPage = () => {
 	return (
 		<div>
 			<p>
