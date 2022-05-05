@@ -1,0 +1,19 @@
+.grid {
+	border-width: 3px;
+	border-color: black;
+	border-style: solid;
+	max-width: max-content;
+	padding: 0px;
+	user-select: none;
+}
+
+.row {
+	--bs-gutter-x: 0;
+	padding: 0px;
+}
+
+.cell {
+	width: 0.5cm;
+	height: 0.5cm;
+	padding: 0px;
+}

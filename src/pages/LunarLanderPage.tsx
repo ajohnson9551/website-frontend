@@ -1,4 +1,4 @@
-export const LunarLander = () => {
+export const LunarLanderPage = () => {
 	return (
 		<div>
 			<p>
