@@ -23,7 +23,7 @@ export const Grid = () => {
 	);
 
 	const addIfCan = (x: number, y: number, inc: number) => {
-		if (x >= 0 && x < size && y > 0 && y < size) {
+		if (x >= 0 && x < size && y >= 0 && y < size) {
 			let copy = [...values];
 			copy[x][y] = Math.min(1, copy[x][y] + inc);
 			setValues(copy);
