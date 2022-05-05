@@ -32,6 +32,8 @@ export const Grid = () => {
 
 	const drawAt = (x: number, y: number) => {
 		if (mouseDown) {
+			console.log(x + ", " + y);
+
 			addIfCan(x, y, bigDraw);
 
 			addIfCan(x + 1, y, medDraw);

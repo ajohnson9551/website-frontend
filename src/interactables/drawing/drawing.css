@@ -1,4 +1,4 @@
-/* .grid {
+.grid {
 	border-width: 3px;
 	border-color: black;
 	border-style: solid;
@@ -8,6 +8,7 @@
 }
 
 .row {
+	--bs-gutter-x: 0;
 	padding: 0px;
 }
 
@@ -15,4 +16,4 @@
 	width: 0.5cm;
 	height: 0.5cm;
 	padding: 0px;
-} */
+}

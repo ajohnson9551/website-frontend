@@ -6,7 +6,7 @@ export const DigitRecognitionPage = () => {
 			<p>
 				Digit Recognition
 			</p>
-			{/* <Grid></Grid> */}
+			<Grid></Grid>
 		</div>
 	)
 };
