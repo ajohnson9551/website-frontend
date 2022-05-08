@@ -1,4 +1,3 @@
-import { NumberLiteralType } from "typescript";
 import Layer from "../Layer";
 import Utility from "../Utility";
 import ActFunc from "./Enums/ActFunc";
@@ -14,7 +13,7 @@ class ConvolutionalLayer extends Layer {
 		super(inputSize, outputSize);
 		this.Cs = Cs;
 		this.numConvs = Cs.length;
-		this.convRadius = 1 + ((Cs[0].length - 1) / 2);
+		this.convRadius = 1 + Math.floor((Cs[0].length - 1) / 2);
 		this.convMod = Math.min(0, 1 + pad - this.convRadius);
 		this.actFuncE = actFuncE;
 	}

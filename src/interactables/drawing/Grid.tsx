@@ -4,7 +4,7 @@ import { Cell } from './Cell';
 
 import './drawing.css';
 
-export const Grid = () => {
+export const Grid = (props: {guesser: (drawing: number[][]) => void}) => {
 	const size: number = 28;
 	const blankArray: number[][] = Array.from({length: size}, () => Array.from({length: size}, () => 0));
 
@@ -14,7 +14,7 @@ export const Grid = () => {
 	const bigDraw = 0.5;
 	const medDraw = 0.3;
 	const smlDraw = 0.1;
-	const tnyDraw = 0.05;
+	const tnyDraw = 0.1;
 
 	const resetButton = (
 		<Button onClick = {() => {setValues(blankArray)}} variant = 'danger'>
@@ -32,8 +32,6 @@ export const Grid = () => {
 
 	const drawAt = (x: number, y: number) => {
 		if (mouseDown) {
-			console.log(x + ", " + y);
-
 			addIfCan(x, y, bigDraw);
 
 			addIfCan(x + 1, y, medDraw);
@@ -59,6 +57,8 @@ export const Grid = () => {
 			addIfCan(x - 2, y - 1, tnyDraw);
 			addIfCan(x - 2, y, tnyDraw);
 			addIfCan(x - 2, y + 1, tnyDraw);
+
+			props.guesser(values);
 		}
 	};
 

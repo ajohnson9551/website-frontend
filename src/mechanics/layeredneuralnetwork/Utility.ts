@@ -23,8 +23,8 @@ abstract class Utility {
 
 	static convertToArr(vol: number[][][]) {
 		let arr = Array.from({length: vol.length * vol[0].length * vol[0][0].length}, () => 0);
-		for (let i = 0; i < arr.length; i++) {
-			arr[i] = vol[i % vol.length][(i / vol.length) % vol[0].length][i / (vol.length * vol[0].length)];
+		for (let i: number = 0; i < arr.length; i++) {
+			arr[i] = vol[i % vol.length][Math.floor(i / vol.length) % vol[0].length][Math.floor(i / (vol.length * vol[0].length))];
 		}
 		return arr;
 	}
@@ -42,12 +42,12 @@ abstract class Utility {
 		for (let i = 0; i < A.length; i++) {
 			y[i] += Utility.dotProd(A[i], x) + b[i];
 		}
-		Utility.actFuncify(y, actFuncE);
+		y = Utility.actFuncify(y, actFuncE);
 		return y;
 	}
 
 	static actFuncify(x: number[], actFuncE: ActFunc) {
-		x = x.map((a) => {return this.actFunc(a, actFuncE)})
+		return x.map((a) => {return this.actFunc(a, actFuncE)})
 	}
 
 	static actFunc(a: number, actFuncE: ActFunc) {
