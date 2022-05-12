@@ -17,6 +17,9 @@ export const Top = () => {
 						<Nav.Link as={Link} to="/lunarlander">Lunar Lander</Nav.Link>
 					</Nav.Item>
 					<Nav.Item>
+						<Nav.Link as={Link} to="/cryptography">Cryptography</Nav.Link>
+					</Nav.Item>
+					<Nav.Item>
 						<Nav.Link as={Link} to="/math">Math</Nav.Link>
 					</Nav.Item>
 					<Nav.Item>
