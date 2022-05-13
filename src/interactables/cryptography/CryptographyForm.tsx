@@ -1,8 +1,7 @@
-import { useState } from 'react';
+import { FormEvent, useState } from 'react';
 import { Button, Container, Form, Row } from 'react-bootstrap';
 
 export const CryptographyForm = (props: {
-		encodeValidation: (message: string) => boolean,
 		encodeFunc: (message: string) => number[],
 		decodeFunc: (code: number[]) => string,
 		cryptFunc: (mod: number, key: number, code: number[]) => number[]}) => {	
@@ -12,6 +11,7 @@ export const CryptographyForm = (props: {
 	const [crypt, setCrypt] = useState("");
 	const [mod, setMod] = useState(1);
 	const [key, setKey] = useState(1);
+	const [invalidMessage, setInvalidMessage] = useState("");
 
 	const getKeyName = () => {
 		switch(mode) {
@@ -33,6 +33,7 @@ export const CryptographyForm = (props: {
 
 	const switchMode = (newMode: string) => {
 		setMode(newMode);
+		setInvalidMessage("");
 	}
 
 	const messageChanged = (e: any) => {
@@ -60,52 +61,128 @@ export const CryptographyForm = (props: {
 		return out;
 	}
 
-	const doCrypt = () => {
+	const keyValidation = () => {
+		if (mod == 1) {
+			setInvalidMessage("Must provide valid modulus!");
+			return false;
+		}
+		if (key == 1) {
+			setInvalidMessage("Must provide valid key!");
+			return false;
+		}
+		setInvalidMessage("");
+		return true;
+	}
+
+	const encryptValidation = () => {
+		if (!keyValidation()) {
+			return false;
+		}
+		if (message.length === 0) {
+			setInvalidMessage("Must provide message!");
+			return false;
+		}
+		for (let i = 0; i < message.length; i++) {
+			if (message.charCodeAt(i) > Math.pow(2, 16) - 1) {
+				setInvalidMessage("Unable to encrypt special characters!");
+				return false;
+			}
+		}
+		return true;
+	};
+
+	const decryptValidation = () => {
+		if (!keyValidation()) {
+			return false;
+		}
+		let mustSeeNumber: boolean = true;
+		for (let i = 0; i < message.length; i++) {
+			if (!mustSeeNumber) {
+				if (message[i] !== '.' && isNaN(+message[i])) {
+					mustSeeNumber = false;
+					break;
+				}
+				if (message[i] === '.') {
+					mustSeeNumber = true;
+					break;
+				}
+				continue;
+			}
+			if (isNaN(+message[i])) {
+				mustSeeNumber = false;
+				break;
+			}
+			mustSeeNumber = false;
+		}
+		if (mustSeeNumber) {
+			setInvalidMessage("");
+			return true;
+		}
+		setInvalidMessage("Unable to decrypt!");
+		return false;
+	}
+
+	const doCrypt = (e: FormEvent) => {
+		e.preventDefault();
 		switch(mode) {
 			case "enc":
-				setCrypt(arrayToString(props.cryptFunc(mod, key, props.encodeFunc(message))));
+				if (encryptValidation()) {
+					setCrypt(arrayToString(props.cryptFunc(mod, key, props.encodeFunc(message))));
+				}
 				break;
 			case "dec":
-				setMessage(props.decodeFunc(props.cryptFunc(mod, key, stringToArray(message))));
+				if (decryptValidation()) {
+					setMessage(props.decodeFunc(props.cryptFunc(mod, key, stringToArray(message))));
+				}
 				break;
 		}
 	}
 
 	const keyChange = (e: any) => {
-		setKey(e.target.value);
+		if (e.target.value === "") {
+			setKey(1);
+		} else {
+			setKey(e.target.value);
+		}
 	}
 
 	const modChange = (e: any) => {
-		setMod(e.target.value);
+		if (e.target.value === "") {
+			setMod(1);
+		} else {
+			setMod(e.target.value);
+		}
 	}
 
-	const keyForm = (
+	const cryptionForm = (
 		<>
-			<Form>
-				<Form.Check onClick={() => switchMode("enc")} inline name="edRadio" type="radio" label="Encryption Mode"/>
+			<Form onSubmit={(e: FormEvent) => doCrypt(e)}>
+				<Form.Check onClick={() => switchMode("enc")} defaultChecked inline name="edRadio" type="radio" label="Encryption Mode"/>
 				<Form.Check onClick={() => switchMode("dec")} inline name="edRadio" type="radio" label="Decryption Mode"/>
 				<Form.Group>
 					<Form.Label>Modulus:</Form.Label>
 					<Form.Control placeholder="Enter Modulus" type="number" onChange={(e) => {modChange(e)}}/>
+					<Form.Control.Feedback type="invalid" tooltip>
+             			"Missing modulus!"
+           			</Form.Control.Feedback>
 				</Form.Group>
 				<Form.Group>
 					<Form.Label>{getKeyName()}</Form.Label>
 					<Form.Control placeholder={`Enter ${getKeyName()}`} type="number" onChange={(e) => {keyChange(e)}}/>
 				</Form.Group>
-			</Form>
-		</>
-	);
-
-	const messageForm = (
-		<>
-			<Form>
 				<Form.Group>
 					<Form.Label>Message to Encrypt or Decrypt:</Form.Label>
 					<Form.Control as="textarea" onChange={(e) => {messageChanged(e)}} value={message}/>
+					<Form.Control.Feedback type="invalid">
+						Invalid entry, unable to {mode}ypt!
+					</Form.Control.Feedback>
 				</Form.Group>
-				<Button onClick={() => doCrypt()}>
-					{getButtonText("crypt")}
-				</Button>
+				<Form.Group>
+					<Button type="submit">
+						{getButtonText("crypt")}
+					</Button>
+					{invalidMessage}
+				</Form.Group>
 				<Form.Label>Result:</Form.Label>
 				<Form.Control as="textarea" plaintext readOnly value={crypt}/>
 				<Form.Text className="text-muted">
@@ -117,14 +194,7 @@ export const CryptographyForm = (props: {
 
 	return (
 		<>
-			<Container>
-				<Row>
-					{keyForm}
-				</Row>
-				<Row>
-					{messageForm}
-				</Row>
-			</Container>
+			{cryptionForm}
 		</>
 	);
 };

@@ -3,7 +3,7 @@ import { CryptographyForm } from "../interactables/cryptography/CryptographyForm
 import { KeyGenForm } from "../interactables/cryptography/KeyGenForm";
 import { cryptFunc } from "../mechanics/cryptography/Crypt";
 import { decodeFunc } from "../mechanics/cryptography/Decode";
-import { encodeFunc, encodeValidation } from "../mechanics/cryptography/Encode";
+import { encodeFunc } from "../mechanics/cryptography/Encode";
 import { keyGen } from "../mechanics/cryptography/KeyGen";
 
 export const CryptographyPage = () => {
@@ -26,7 +26,6 @@ export const CryptographyPage = () => {
 					</Col>
 					<Col>
 						<CryptographyForm
-							encodeValidation={encodeValidation}
 							encodeFunc={encodeFunc}
 							decodeFunc={decodeFunc}
 							cryptFunc={cryptFunc}

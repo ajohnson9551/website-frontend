@@ -1,4 +1,4 @@
-const decodeFunc = (code: number[]) => {
+export const decodeFunc = (code: number[]) => {
 	let message: string = "";
 	for (let x of code) {
 		message += getChar(getNumPair(x));
@@ -8,10 +8,8 @@ const decodeFunc = (code: number[]) => {
 
 const getNumPair = (concat: number) => {
 	let numPair: number[] = [0, 0];
-	console.log("concat numpair to decode = " + concat);
 	numPair[0] = Math.floor(concat / 100000);
 	numPair[1] = concat % 100000;
-	console.log("decoded numPair = " + numPair);
 	return numPair;
 };
 
@@ -20,9 +18,3 @@ const getChar = (numPair: number[]) => {
 	j = j < 0 ? j + Math.pow(2,16) : j % Math.pow(2,16);
 	return String.fromCharCode(j);
 }
-
-const decodeValidation = (code: number[]) => {
-	return true;
-};
-
-export { decodeFunc as decodeFunc, decodeValidation as decodeValidation };
