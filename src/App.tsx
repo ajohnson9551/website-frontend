@@ -6,6 +6,7 @@ import { DigitRecognitionPage } from "./pages/DigitRecognitionPage";
 import { AboutPage } from "./pages/AboutPage";
 import { MathPage } from "./pages/MathPage";
 import { LunarLanderPage } from "./pages/LunarLanderPage";
+import { CryptographyPage } from "./pages/CryptographyPage";
 
 function App() {
 	return (
@@ -16,6 +17,7 @@ function App() {
 				<Route path="home" element={<HomePage />} />
 				<Route path="digitrecognition" element={<DigitRecognitionPage />} />
 				<Route path="lunarlander" element={<LunarLanderPage />} />
+				<Route path="cryptography" element={<CryptographyPage />} />
 				<Route path="math" element={<MathPage />} />
 				<Route path="about" element={<AboutPage />} />
 				<Route path="*" element={<HomePage />} />
