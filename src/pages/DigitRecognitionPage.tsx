@@ -33,12 +33,6 @@ export const DigitRecognitionPage = () => {
 		setNetworkReady(true);
 	}
 
-	const testButton = (
-		<Button onClick = {() => getTestFunc()}>
-			TryMe!
-		</Button>
-	);
-
 	const guesser = (drawing: number[][]) => {
 		setGuessReady(false);
 		if (networkReady) {
@@ -53,7 +47,6 @@ export const DigitRecognitionPage = () => {
 			<p>
 				Digit Recognition
 			</p>
-			{testButton}
 			<Grid guesser = {guesser}/>
 			<RecognizerView guess={guess} guessReady={guessReady}/>
 		</div>

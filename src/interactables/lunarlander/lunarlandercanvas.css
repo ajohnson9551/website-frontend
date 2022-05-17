@@ -1,0 +1,8 @@
+.canvasBox {
+	border-width: 3px;
+	border-color: black;
+	border-style: solid;
+	max-width: max-content;
+	padding: 0px;
+	user-select: none;
+}

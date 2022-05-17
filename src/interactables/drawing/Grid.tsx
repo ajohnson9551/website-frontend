@@ -14,7 +14,7 @@ export const Grid = (props: {guesser: (drawing: number[][]) => void}) => {
 	const bigDraw = 0.5;
 	const medDraw = 0.3;
 	const smlDraw = 0.1;
-	const tnyDraw = 0.1;
+	const tnyDraw = 0;
 
 	const resetButton = (
 		<Button onClick = {() => {setValues(blankArray)}} variant = 'danger'>
@@ -68,8 +68,9 @@ export const Grid = (props: {guesser: (drawing: number[][]) => void}) => {
 			onMouseMove = {(event) => setMouseDown(event.buttons === 1)}
 			onMouseLeave = {() => setMouseDown(false)}>
 				{values.map((rowVals, x1) => 
-				<Row>
+				<Row key={x1}>
 					{rowVals.map((value, y1) => <Cell
+							key = {x1 + "," + y1}
 							val = {value}
 							x = {x1}
 							y = {y1}
