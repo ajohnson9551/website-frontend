@@ -7,8 +7,11 @@ import { AboutPage } from "./pages/AboutPage";
 import { MathPage } from "./pages/MathPage";
 import { LunarLanderPage } from "./pages/LunarLanderPage";
 import { CryptographyPage } from "./pages/CryptographyPage";
+import { LunarLanderGame } from "./mechanics/lunarlander/LunarLanderGame";
 
 function App() {
+	const game = new LunarLanderGame();
+
 	return (
 		<BrowserRouter>
 		<Routes>
@@ -16,7 +19,7 @@ function App() {
 				<Route index element={<HomePage />} />
 				<Route path="home" element={<HomePage />} />
 				<Route path="digitrecognition" element={<DigitRecognitionPage />} />
-				<Route path="lunarlander" element={<LunarLanderPage />} />
+				<Route path="lunarlander" element={<LunarLanderPage game={game}/>} />
 				<Route path="cryptography" element={<CryptographyPage />} />
 				<Route path="math" element={<MathPage />} />
 				<Route path="about" element={<AboutPage />} />
