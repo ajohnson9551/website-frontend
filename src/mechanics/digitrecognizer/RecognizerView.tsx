@@ -1,6 +1,8 @@
-const RecognizerView = (props: {guess: number, guessReady: boolean}) => {
+const RecognizerView = (props: {guess: number, guessReady: boolean, demo: boolean}) => {
+	let prefix = props.demo ? "I think I see a " : "I think you drew a ";
+
 	const view = props.guessReady ? 
-		<p>I think you drew a {props.guess}!</p> 
+		<p>{prefix} {props.guess}!</p> 
 		:
 		<p>I'm still thinking...</p>
 

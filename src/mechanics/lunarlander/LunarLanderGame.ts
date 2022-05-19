@@ -145,13 +145,6 @@ export class LunarLanderGame {
         this.ang = 2 * Math.PI * Math.random();
         this.cos = Math.cos(this.ang);
         this.sin = Math.sin(this.ang);
-		// this.pos[0] = 100;
-        // this.pos[1] = 200;
-        // this.vel[0] = 150;
-        // this.vel[1] = 0;
-        // this.ang = -1;
-        // this.cos = Math.cos(this.ang);
-        // this.sin = Math.sin(this.ang);
 	}
 
 	getScore() {

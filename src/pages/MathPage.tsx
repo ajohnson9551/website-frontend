@@ -1,5 +1,5 @@
 import list from '../data/math/pdls';
-import { PDL } from '../interactables/math/PdfDescriptionLink';
+import { PDL } from '../views/math/PdfDescriptionLink';
 import { pdlModel } from '../models/math/pdlModel';
 
 export const MathPage = () => {

@@ -1,6 +1,6 @@
 import { Container, Row, Col } from "react-bootstrap";
-import { CryptographyForm } from "../interactables/cryptography/CryptographyForm";
-import { KeyGenForm } from "../interactables/cryptography/KeyGenForm";
+import { CryptographyForm } from "../views/cryptography/CryptographyForm";
+import { KeyGenForm } from "../views/cryptography/KeyGenForm";
 import { cryptFunc } from "../mechanics/cryptography/Crypt";
 import { decodeFunc } from "../mechanics/cryptography/Decode";
 import { encodeFunc } from "../mechanics/cryptography/Encode";

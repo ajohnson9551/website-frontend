@@ -1,5 +1,5 @@
-export const Cell = (props: {val:number, x: number, y: number, drawFunc: Function}) => {
-	const scaledVal = 255 * (1 - props.val);
+export const Cell = (props: {val:number, x: number, y: number, drawFunc: Function, override:number}) => {
+	let scaledVal = props.override == -1 ? 255 * (1 - props.val) : 255 * (1 - props.override);
 
 	return (
 		<div

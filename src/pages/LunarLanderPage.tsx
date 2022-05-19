@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Button, Form } from "react-bootstrap";
-import { LunarLanderCanvas } from "../interactables/lunarlander/LunarLanderCanvas";
+import { LunarLanderCanvas } from "../views/lunarlander/LunarLanderCanvas";
 import { LunarLanderGame } from "../mechanics/lunarlander/LunarLanderGame";
 
 export const LunarLanderPage = (props: {game: LunarLanderGame}) => {

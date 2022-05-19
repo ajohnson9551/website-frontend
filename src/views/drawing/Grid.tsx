@@ -4,7 +4,7 @@ import { Cell } from './Cell';
 
 import './drawing.css';
 
-export const Grid = (props: {guesser: (drawing: number[][]) => void}) => {
+export const Grid = (props: {guesser: (drawing: number[][]) => void, demoSetter: (d: boolean) => void, drawThis: null | number[][]}) => {
 	const size: number = 28;
 	const blankArray: number[][] = Array.from({length: size}, () => Array.from({length: size}, () => 0));
 
@@ -17,7 +17,7 @@ export const Grid = (props: {guesser: (drawing: number[][]) => void}) => {
 	const tnyDraw = 0;
 
 	const resetButton = (
-		<Button onClick = {() => {setValues(blankArray)}} variant = 'danger'>
+		<Button onClick = {() => {setValues(blankArray); props.demoSetter(false)}} variant = 'danger'>
 			RESET
 		</Button>
 	);
@@ -32,6 +32,8 @@ export const Grid = (props: {guesser: (drawing: number[][]) => void}) => {
 
 	const drawAt = (x: number, y: number) => {
 		if (mouseDown) {
+			props.demoSetter(false);
+
 			addIfCan(x, y, bigDraw);
 
 			addIfCan(x + 1, y, medDraw);
@@ -72,6 +74,7 @@ export const Grid = (props: {guesser: (drawing: number[][]) => void}) => {
 					{rowVals.map((value, y1) => <Cell
 							key = {x1 + "," + y1}
 							val = {value}
+							override = {props.drawThis != null ? props.drawThis[x1][y1] : -1}
 							x = {x1}
 							y = {y1}
 							drawFunc = {drawAt}/>)}
