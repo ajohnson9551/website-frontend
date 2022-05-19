@@ -1,14 +1,18 @@
 import { useEffect, useRef, useState } from "react";
-import { Form } from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
 import { LunarLanderCanvas } from "../interactables/lunarlander/LunarLanderCanvas";
 import { LunarLanderGame } from "../mechanics/lunarlander/LunarLanderGame";
 
 export const LunarLanderPage = (props: {game: LunarLanderGame}) => {
 	const running = useRef<boolean>(false);
+	const autopilot = useRef<boolean>(true);
+	const [autopilotD, setAutopilotD] = useState(true);
 	const [runningD, setRunningD] = useState(false);
 	const [tick, setTick] = useState(0);
 
 	useEffect(() => {
+		resetGame();
+
 		const doKeyDown = (e: KeyboardEvent) => {
 			props.game.keys.add(e.key);
 		};
@@ -22,7 +26,7 @@ export const LunarLanderPage = (props: {game: LunarLanderGame}) => {
 				props.game.incrementTick();
 				setTick(props.game.tick);
 			}
-		}, 100);
+		}, 20);
 
 		window.document.addEventListener("keydown", doKeyDown);
 		window.document.addEventListener("keyup", doKeyUp);
@@ -34,11 +38,23 @@ export const LunarLanderPage = (props: {game: LunarLanderGame}) => {
 		}
 	}, []);
 
-	const toggleRunning = () => {
-		running.current = !running.current;
+	const setAutopilot = (newAutopilot: boolean) => {
+		autopilot.current = newAutopilot;
+		setAutopilotD(autopilot.current);
+		props.game.setAutopilot(autopilot.current);
+	};
+
+	const setRunning = (newRunning: boolean) => {
+		running.current = newRunning;
 		setRunningD(running.current);
 		props.game.running = running.current;
-	}
+	};
+
+	const resetGame = () => {
+		props.game.resetGame();
+		props.game.tick = 0;
+		setTick(0);
+	};
 
 	const runGameSwitch = (
 		<Form>
@@ -47,16 +63,37 @@ export const LunarLanderPage = (props: {game: LunarLanderGame}) => {
 				id="custom-switch"
 				label="Run Game"
 				checked={running.current}
-				onClick={toggleRunning}
+				onChange={() => setRunning(!running.current)}
 			/>	
 		</Form>
+	);
+
+	const autopilotSwitch = (
+		<Form>
+			<Form.Check
+				type="switch"
+				id="custom-switch"
+				label="Enable Autopilot"
+				checked={autopilot.current}
+				onChange={() => setAutopilot(!autopilot.current)}
+			/>	
+		</Form>
+	);
+
+	const resetGameButton = (
+		<Button onClick={resetGame}>
+			Reset Game
+		</Button>
 	);
 
 	return (
 		<>
 			<p>Lunar Lander Page</p>
 			<p>Running = {runningD ? "TRUE" : "FALSE"}</p>
+			<p>Autopilot = {autopilotD ? "TRUE" : "FALSE"}</p>
+			{resetGameButton}
 			{runGameSwitch}
+			{autopilotSwitch}
 			<LunarLanderCanvas tick={tick} game={props.game}></LunarLanderCanvas>
 		</>
 	)

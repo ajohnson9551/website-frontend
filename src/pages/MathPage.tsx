@@ -4,7 +4,7 @@ import { pdlModel } from '../models/math/pdlModel';
 
 export const MathPage = () => {
 
-	const links = list.map((pdl: pdlModel) => <PDL pdl={pdl}/>)
+	const links = list.map((pdl: pdlModel) => <PDL pdl={pdl} key={pdl.path}/>)
 
 	return (
 		<div>
