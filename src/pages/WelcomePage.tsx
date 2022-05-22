@@ -3,17 +3,17 @@ import about from "../data/PageAbouts";
 import title from "../data/PageTitles";
 import { About } from "../views/About";
 
-export const ContactPage = () => {
+export const WelcomePage = () => {
 	return (
 		<Container fluid>
 				<Row>
-					{title.get("contact")}
+					{title.get("welcome")}
 				</Row>
 				<Row>
 					<Col>
 					</Col>
 					<Col md="10">
-						<About abt={about.get("contact")}/>
+						<About abt={about.get("welcome")}/>
 					</Col>
 					<Col>
 					</Col>

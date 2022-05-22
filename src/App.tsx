@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
 import { Whole } from "./spa/Whole";
-import { HomePage } from "./pages/HomePage";
+import { WelcomePage } from "./pages/WelcomePage";
 import { DigitRecognitionPage } from "./pages/DigitRecognitionPage";
 import { ContactPage } from "./pages/ContactPage";
 import { MathPage } from "./pages/MathPage";
@@ -16,14 +16,14 @@ function App() {
 		<BrowserRouter>
 		<Routes>
 				<Route path="/" element={<Whole />}>
-				<Route index element={<HomePage />} />
-				<Route path="home" element={<HomePage />} />
+				<Route index element={<WelcomePage />} />
+				<Route path="welcome" element={<WelcomePage />} />
 				<Route path="digitrecognition" element={<DigitRecognitionPage />} />
 				<Route path="lunarlander" element={<LunarLanderPage game={game}/>} />
 				<Route path="cryptography" element={<CryptographyPage />} />
 				<Route path="math" element={<MathPage />} />
 				<Route path="contact" element={<ContactPage />} />
-				<Route path="*" element={<HomePage />} />
+				<Route path="*" element={<WelcomePage />} />
 			</Route>
 		</Routes>
 		</BrowserRouter>

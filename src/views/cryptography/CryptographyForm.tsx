@@ -25,9 +25,9 @@ export const CryptographyForm = (props: {
 	const getButtonText = (base: string) => {
 		switch(mode) {
 			case "enc":
-				return "En" + base;
+				return ("En" + base).toUpperCase();
 			case "dec":
-				return "De" + base;
+				return ("De" + base).toUpperCase();
 		}
 	}
 
@@ -159,35 +159,40 @@ export const CryptographyForm = (props: {
 			<Form onSubmit={(e: FormEvent) => doCrypt(e)}>
 				<Form.Check onClick={() => switchMode("enc")} defaultChecked inline name="edRadio" type="radio" label="Encryption Mode"/>
 				<Form.Check onClick={() => switchMode("dec")} inline name="edRadio" type="radio" label="Decryption Mode"/>
-				<Form.Group>
-					<Form.Label>Modulus:</Form.Label>
+				<Form.Group className="cryptBox">
+					<Form.Label as="h5">Modulus:</Form.Label>
 					<Form.Control placeholder="Enter Modulus" type="number" onChange={(e) => {modChange(e)}}/>
 					<Form.Control.Feedback type="invalid" tooltip>
              			"Missing modulus!"
            			</Form.Control.Feedback>
 				</Form.Group>
-				<Form.Group>
-					<Form.Label>{getKeyName()}</Form.Label>
+				<Form.Group className="cryptBox">
+					<Form.Label as="h5">{getKeyName()}:</Form.Label>
 					<Form.Control placeholder={`Enter ${getKeyName()}`} type="number" onChange={(e) => {keyChange(e)}}/>
 				</Form.Group>
-				<Form.Group>
-					<Form.Label>Message to Encrypt or Decrypt:</Form.Label>
+				<Form.Group className="cryptBox">
+					<Form.Label as="h5">Message to Encrypt or Decrypt:</Form.Label>
 					<Form.Control as="textarea" onChange={(e) => {messageChanged(e)}} value={message}/>
 					<Form.Control.Feedback type="invalid">
 						Invalid entry, unable to {mode}ypt!
 					</Form.Control.Feedback>
 				</Form.Group>
-				<Form.Group>
-					<Button type="submit">
-						{getButtonText("crypt")}
-					</Button>
+				<Form.Group className="cryptBox">
+					<div className="d-grid">
+						<Button type="submit" variant="success" className="btn-block">
+							{getButtonText("crypt")}
+						</Button>
+					</div>
 					{invalidMessage}
 				</Form.Group>
-				<Form.Label>Result:</Form.Label>
-				<Form.Control as="textarea" plaintext readOnly value={crypt}/>
-				<Form.Text className="text-muted">
-					The result of encryption, copy exactly!
-				</Form.Text>
+				<Form.Group className="cryptBox">
+					<Form.Label as="h5">Result:</Form.Label>
+					<Form.Control as="textarea" plaintext readOnly value={crypt}/>
+					<Form.Text className="text-muted">
+						The result of encryption, copy exactly!
+					</Form.Text>
+				</Form.Group>
+				
 			</Form>
 		</>
 	);

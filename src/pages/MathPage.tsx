@@ -1,6 +1,10 @@
 import list from '../data/math/pdls';
 import { PDL } from '../views/math/PdfDescriptionLink';
 import { pdlModel } from '../models/math/pdlModel';
+import { Container, Row, Col } from 'react-bootstrap';
+import { About } from '../views/About';
+import about from '../data/PageAbouts';
+import title from '../data/PageTitles';
 
 export const MathPage = () => {
 
@@ -8,11 +12,19 @@ export const MathPage = () => {
 
 	return (
 		<div>
-			<p>
-				Here you can find a handful of select math PDFs written by myself over the course of my education, mostly regarding set theory and model theory. \n
-				Often papers were written alongside reading courses and as such references are sometimes not given. Though I can recommend dozens of textbooks upon request.
-			</p>
-			{links}
+			<Container fluid>
+				<Row>
+					{title.get("math")}
+				</Row>
+				<Row>
+					<Col>
+						{links}
+					</Col>
+					<Col>
+						<About abt={about.get("math")}/>
+					</Col>
+				</Row>
+			</Container>	
 		</div>
 	)
 };

@@ -5,6 +5,9 @@ import { cryptFunc } from "../mechanics/cryptography/Crypt";
 import { decodeFunc } from "../mechanics/cryptography/Decode";
 import { encodeFunc } from "../mechanics/cryptography/Encode";
 import { keyGen } from "../mechanics/cryptography/KeyGen";
+import { About } from "../views/About";
+import about from "../data/PageAbouts";
+import title from "../data/PageTitles";
 
 export const CryptographyPage = () => {
 	const disclaimer = (
@@ -14,25 +17,30 @@ export const CryptographyPage = () => {
 	);
 
 	return (
-		<div>
-			<p>
-				Cryptography Page
-			</p>
-			{disclaimer}
-			<Container>
+		<Container fluid>
+				<Row>
+					{title.get("cryptography")}
+				</Row>
 				<Row>
 					<Col>
-						<KeyGenForm keyGenFunc={keyGen}/>
+						<Row>
+							<Col>
+								<KeyGenForm keyGenFunc={keyGen}/>
+							</Col>
+							<Col>
+								<CryptographyForm
+									encodeFunc={encodeFunc}
+									decodeFunc={decodeFunc}
+									cryptFunc={cryptFunc}
+								/>
+							</Col>
+						</Row>
 					</Col>
 					<Col>
-						<CryptographyForm
-							encodeFunc={encodeFunc}
-							decodeFunc={decodeFunc}
-							cryptFunc={cryptFunc}
-						/>
+						<About abt={about.get("cryptography")}/>
 					</Col>
 				</Row>
-			</Container>
-		</div>
+		</Container>
+		
 	)
 };

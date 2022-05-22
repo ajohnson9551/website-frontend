@@ -2,8 +2,6 @@ import { useEffect, useRef } from 'react';
 import { Container, Row } from 'react-bootstrap';
 import { LunarLanderGame } from '../../mechanics/lunarlander/LunarLanderGame';
 
-import './lunarlandercanvas.css';
-
 export const LunarLanderCanvas = (props: {tick: number, game: LunarLanderGame}) => {
 	const canvasRef = useRef<HTMLCanvasElement | null>(null);
 

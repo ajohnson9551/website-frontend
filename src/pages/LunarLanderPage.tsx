@@ -1,17 +1,21 @@
 import { useEffect, useRef, useState } from "react";
-import { Button, Form } from "react-bootstrap";
+import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { LunarLanderCanvas } from "../views/lunarlander/LunarLanderCanvas";
 import { LunarLanderGame } from "../mechanics/lunarlander/LunarLanderGame";
+import about from "../data/PageAbouts";
+import { About } from "../views/About";
+import title from "../data/PageTitles";
 
 export const LunarLanderPage = (props: {game: LunarLanderGame}) => {
-	const running = useRef<boolean>(false);
+	const running = useRef<boolean>(true);
 	const autopilot = useRef<boolean>(true);
 	const [autopilotD, setAutopilotD] = useState(true);
-	const [runningD, setRunningD] = useState(false);
+	const [runningD, setRunningD] = useState(true);
 	const [tick, setTick] = useState(0);
 
 	useEffect(() => {
 		resetGame();
+		props.game.running = true;
 
 		const doKeyDown = (e: KeyboardEvent) => {
 			props.game.keys.add(e.key);
@@ -81,20 +85,41 @@ export const LunarLanderPage = (props: {game: LunarLanderGame}) => {
 	);
 
 	const resetGameButton = (
-		<Button onClick={resetGame}>
-			Reset Game
+		<Button onClick={resetGame} variant="danger">
+			RESET
 		</Button>
 	);
 
 	return (
-		<>
-			<p>Lunar Lander Page</p>
-			<p>Running = {runningD ? "TRUE" : "FALSE"}</p>
-			<p>Autopilot = {autopilotD ? "TRUE" : "FALSE"}</p>
-			{resetGameButton}
-			{runGameSwitch}
-			{autopilotSwitch}
-			<LunarLanderCanvas tick={tick} game={props.game}></LunarLanderCanvas>
-		</>
+		<Container fluid>
+				<Row>
+					{title.get("lunarlander")}
+				</Row>
+				<Row>
+					<Col>
+						<Row className="llButtonBox">
+							<Col>
+								<Row xs="auto" className="justify-content-md-center">
+									{resetGameButton}
+								</Row>
+							</Col>
+							<Col>
+								<Row xs="auto" className="justify-content-md-center">
+									{runGameSwitch}
+								</Row>
+							</Col>
+							<Col>
+								<Row xs="auto" className="justify-content-md-center">
+									{autopilotSwitch}
+								</Row>	
+							</Col>
+						</Row>
+						<LunarLanderCanvas tick={tick} game={props.game}></LunarLanderCanvas>
+					</Col>
+					<Col>
+						<About abt={about.get("lunarlander")}/>
+					</Col>
+				</Row>
+		</Container>
 	)
 };

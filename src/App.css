@@ -1,0 +1,94 @@
+.pageTitle {
+	text-align: center;
+	padding: 20px;
+}
+
+.aboutBox {
+	padding: 20px;
+}
+
+.imageBox {
+	padding-right: 10px;
+	padding-bottom: 50px;
+}
+
+.canvasBox {
+	border-width: 3px;
+	border-color: black;
+	border-style: solid;
+	max-width: max-content;
+	min-width: 600px;
+	padding: 0px;
+	user-select: none;
+}
+
+.drButtonBox {
+	margin: 10px;
+}
+
+.llButtonBox {
+	margin: 10px;
+}
+
+.guessBox {
+	text-align: center;
+	padding: 10px;
+}
+
+.aboutTextBox {
+	max-width: 700px;
+}
+
+.grid {
+	border-width: 3px;
+	border-color: black;
+	border-style: solid;
+	max-width: max-content;
+	min-width: 14cm;
+	min-height: 14cm;
+	padding: 0px;
+	user-select: none;
+}
+
+.row {
+	--bs-gutter-x: 0;
+	padding: 0px;
+}
+
+.cell {
+	width: 0.5cm;
+	height: 0.5cm;
+	padding: 0px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.cryptBox {
+	padding: 10px;
+}
+
+.form-check-input:focus {
+    background-color:white;
+    border-color: white;
+	box-shadow: 0 0 0 0.2rem rgba(0, 128, 0, 0.2);
+}
+
+.form-check-input:checked {
+    background-color:green;
+    border-color: green;
+}
+
+.form-control:focus {
+	border-color: green;
+	box-shadow: 0 0 0 0.2rem rgba(0, 128, 0, 0.2);
+} 

@@ -16,7 +16,7 @@ export const KeyGenForm = (props: {keyGenFunc: () => number[]}) => {
 	const KGForm = (
 		<Form onSubmit = {(e: FormEvent) => formSubmit(e)}>
 			<Form.Group>
-				<Form.Label>Modulus:</Form.Label>
+				<Form.Label as="h5">Modulus:</Form.Label>
 				<Form.Control plaintext readOnly value={getValue(0)}/>
 				<Form.Text className="text-muted">
 					The modulus is needed for both encrypting and decrypting and can be freely shared.
@@ -24,7 +24,7 @@ export const KeyGenForm = (props: {keyGenFunc: () => number[]}) => {
 			</Form.Group>
 
 			<Form.Group>
-				<Form.Label>Public Key:</Form.Label>
+				<Form.Label as="h5">Public Key:</Form.Label>
 				<Form.Control plaintext readOnly value={getValue(1)}/>
 				<Form.Text className="text-muted">
 					The public key is needed to encrypt messages and can be freely shared.
@@ -32,16 +32,21 @@ export const KeyGenForm = (props: {keyGenFunc: () => number[]}) => {
 			</Form.Group>
 
 			<Form.Group>
-				<Form.Label>Private Key:</Form.Label>
+				<Form.Label as="h5">Private Key:</Form.Label>
 				<Form.Control plaintext readOnly value={getValue(2)}/>
 				<Form.Text className="text-muted">
 					The private key is needed to decrypt messages. Keep this secret!
 				</Form.Text>
 			</Form.Group>
 
-			<Button type="submit">
-				Generate New
-			</Button>
+			<Form.Group className="cryptBox">
+				<div className="d-grid cryptoBox">
+					<Button type="submit" variant="success">
+						GENERATE NEW
+					</Button>
+				</div>
+			</Form.Group>
+			
 		</Form>
 	);
 

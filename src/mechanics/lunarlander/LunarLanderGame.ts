@@ -114,14 +114,14 @@ export class LunarLanderGame {
 	}
 	
 	doAct() {
-		if (this.keys.has("w")) {
+		if (this.keys.has("ArrowUp")) {
 			this.toggleEngine(true);
 		} else {
 			this.toggleEngine(false);
 		}
 		this.turning = 0;
-		this.turning += this.keys.has("d") ? 1 : 0;
-		this.turning += this.keys.has("a") ? -1 : 0;
+		this.turning += this.keys.has("ArrowRight") ? 1 : 0;
+		this.turning += this.keys.has("ArrowLeft") ? -1 : 0;
 	}
 
 	doThink() {
