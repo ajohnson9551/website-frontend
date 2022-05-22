@@ -5,9 +5,9 @@ export const About = (props: {abt: {imgPath: string, desc: string}}) => {
 		<Container fluid className="aboutBox">
 			<Row>
 				<Col className="imageBox" md="auto">
-					<img src={props.abt.imgPath}/>
+					<img src={props.abt.imgPath} className="responsiveImage"/>
 				</Col>
-				<Col className="aboutTextBox" md="auto">
+				<Col md="auto">
 					{props.abt.desc}
 				</Col>
 			</Row>

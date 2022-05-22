@@ -5,7 +5,7 @@ export const Cell = (props: {val:number, x: number, y: number, drawFunc: Functio
 		<div
 			className = 'cell'
 			onMouseOver = {() => props.drawFunc(props.x, props.y)}
-			style = {{ backgroundColor: `rgb(${scaledVal}, ${scaledVal}, ${scaledVal})` }}
+			style = {{ backgroundColor: `rgba(41, 168, 71, ${props.val})` }}
 		>
 		</div>
 	);

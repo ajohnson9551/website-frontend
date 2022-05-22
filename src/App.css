@@ -1,10 +1,30 @@
+.pageBG {
+	background-color: rgb(83, 83, 83);
+	min-height: 100vh;
+	color:white;
+}
+
 .pageTitle {
 	text-align: center;
 	padding: 20px;
+	color: white;
+}
+
+.welcomeText {
+	max-width: 700px;
+}
+
+a {
+	color: #21cc49;
+}
+
+a:hover {
+	color: rgb(198, 53, 255);
 }
 
 .aboutBox {
 	padding: 20px;
+	min-width: 400px;
 }
 
 .imageBox {
@@ -35,8 +55,9 @@
 	padding: 10px;
 }
 
-.aboutTextBox {
-	max-width: 700px;
+.responsiveImage {
+	max-width: 100%;
+	height: auto;
 }
 
 .grid {
@@ -48,6 +69,7 @@
 	min-height: 14cm;
 	padding: 0px;
 	user-select: none;
+	background-color: rgb(33, 33, 36);
 }
 
 .row {
@@ -75,20 +97,69 @@ input[type=number] {
 
 .cryptBox {
 	padding: 10px;
+	min-width: 300px;
+}
+
+.cryptForm {
+	padding: 20px;
 }
 
 .form-check-input:focus {
     background-color:white;
     border-color: white;
-	box-shadow: 0 0 0 0.2rem rgba(0, 128, 0, 0.2);
+	box-shadow: 0 0 0 0.2rem rgba(41, 168, 71, 0.2);
 }
 
 .form-check-input:checked {
-    background-color:green;
-    border-color: green;
+    background-color:#28a745;
+    border-color: #28a745;
 }
 
 .form-control:focus {
-	border-color: green;
-	box-shadow: 0 0 0 0.2rem rgba(0, 128, 0, 0.2);
+	border-color: #28a745;
+	box-shadow: 0 0 0 0.2rem rgba(41, 168, 71, 0.2);
 } 
+
+
+.text-muted {
+	color: rgba(255, 255, 255, 0.753) !important;
+}
+
+textarea.form-control {
+	background-color: grey !important;
+	color: white !important;
+}
+
+textarea.form-control-plaintext{
+	background-color: grey !important;
+	color: white !important;
+}
+
+input.form-control {
+	background-color: grey !important;
+	color: white !important;
+}
+
+input.form-control-plaintext {
+	background-color: grey !important;
+	color: white !important;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+	color: rgba(255, 255, 255, 0.418) !important;
+	opacity: 1; /* Firefox */
+}
+  
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+	color: rgba(255, 255, 255, 0.418) !important;
+	opacity: 1; /* Firefox */
+}
+  
+::-ms-input-placeholder { /* Microsoft Edge */
+	color: rgba(255, 255, 255, 0.418) !important;
+	opacity: 1; /* Firefox */
+}
+
+.emph {
+	color: #21cc49;
+}

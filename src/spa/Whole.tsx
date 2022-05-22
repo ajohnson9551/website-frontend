@@ -3,9 +3,9 @@ import { Top } from "./Top";
 
 export const Whole = () => {
 	return (
-		<>
+		<div className="pageBG">
 			<Top />
-			<Outlet />
-		</>
+			<Outlet/>
+		</div>
 	)
 };

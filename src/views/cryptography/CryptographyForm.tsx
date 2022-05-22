@@ -157,8 +157,10 @@ export const CryptographyForm = (props: {
 	const cryptionForm = (
 		<>
 			<Form onSubmit={(e: FormEvent) => doCrypt(e)}>
-				<Form.Check onClick={() => switchMode("enc")} defaultChecked inline name="edRadio" type="radio" label="Encryption Mode"/>
-				<Form.Check onClick={() => switchMode("dec")} inline name="edRadio" type="radio" label="Decryption Mode"/>
+				<Form.Group className="cryptBox">
+					<Form.Check onClick={() => switchMode("enc")} defaultChecked inline name="edRadio" type="radio" label="Encryption Mode"/>
+					<Form.Check onClick={() => switchMode("dec")} inline name="edRadio" type="radio" label="Decryption Mode"/>
+				</Form.Group>
 				<Form.Group className="cryptBox">
 					<Form.Label as="h5">Modulus:</Form.Label>
 					<Form.Control placeholder="Enter Modulus" type="number" onChange={(e) => {modChange(e)}}/>

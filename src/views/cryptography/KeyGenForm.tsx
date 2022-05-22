@@ -14,7 +14,7 @@ export const KeyGenForm = (props: {keyGenFunc: () => number[]}) => {
 	}
 
 	const KGForm = (
-		<Form onSubmit = {(e: FormEvent) => formSubmit(e)}>
+		<Form onSubmit = {(e: FormEvent) => formSubmit(e)} className="cryptForm">
 			<Form.Group>
 				<Form.Label as="h5">Modulus:</Form.Label>
 				<Form.Control plaintext readOnly value={getValue(0)}/>
