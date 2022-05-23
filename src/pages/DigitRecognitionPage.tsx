@@ -15,7 +15,7 @@ export const DigitRecognitionPage = () => {
 	const trainingData = JSON.parse(trainingDataString);
 	let tick = 0;
 	const lnn: LayeredNetwork = new LayeredNetwork(JSON.parse(drLayersString));
-	const [guess, setGuess] = useState(0);
+	const [guess, setGuess] = useState([0, 0]);
 	const [guessReady, setGuessReady] = useState(false);
 
 	const demoRunning = useRef(true);

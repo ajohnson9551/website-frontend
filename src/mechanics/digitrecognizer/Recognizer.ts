@@ -7,7 +7,7 @@ const Recognizer = (net: LayeredNetwork, drawing: number[][]) => {
 		drawingArr[i] = drawing[Math.floor(i / 28)][i % 28];
 	}
 	const result = net.evaluate(drawingArr);
-	return Utility.maxIndex(result);
+	return Utility.maxIndexWithConfidence(result);
 }
 
 export default Recognizer;

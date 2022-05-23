@@ -96,6 +96,17 @@ abstract class Utility {
 		}
 		return i;
 	}
+
+	static maxIndexWithConfidence(x: number[]) {
+		let i = this.maxIndex(x);
+		let c = 0;
+		for (let j = 0; j < x.length; j++) {
+			c += x[j];
+		}
+		c = x[i] / c;
+		c = Math.round(1000 * c) / 10;
+		return [i, c];
+	}
 }
 
 export default Utility;

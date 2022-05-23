@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route, HashRouter } from "react-router-dom";
 import './App.css';
 import { Whole } from "./spa/Whole";
 import { WelcomePage } from "./pages/WelcomePage";
@@ -14,7 +14,7 @@ function App() {
 	const game = new LunarLanderGame();
 
 	return (
-		<BrowserRouter>
+		<HashRouter>
 		<Routes>
 				<Route path="/" element={<Whole />}>
 				<Route index element={<WelcomePage />} />
@@ -27,7 +27,7 @@ function App() {
 				<Route path="*" element={<ErrorPage />} />
 			</Route>
 		</Routes>
-		</BrowserRouter>
+		</HashRouter>
 	);
 }
 

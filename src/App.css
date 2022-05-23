@@ -32,6 +32,12 @@ a:hover {
 	padding-bottom: 50px;
 }
 
+img {
+	/* border-width: 2px;
+	border-color: rgb(24, 24, 24);
+	border-style: solid; */
+}
+
 .canvasBox {
 	border-width: 3px;
 	border-color: black;
@@ -58,6 +64,22 @@ a:hover {
 .responsiveImage {
 	max-width: 100%;
 	height: auto;
+}
+
+.responsiveImageCentered {
+	max-width: 100%;
+	height: auto;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.centerMe {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.spaceMe {
+	padding-top: 20px;
 }
 
 .grid {
@@ -171,4 +193,12 @@ input.form-control-plaintext {
 
 .disclaimer {
 	font-size: smaller;
+}
+
+.navbar-nav {
+	margin-left: 5px;
+}
+
+.navbar-toggler {
+	margin-left: 5px;
 }
