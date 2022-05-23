@@ -114,7 +114,14 @@ export const LunarLanderPage = (props: {game: LunarLanderGame}) => {
 								</Row>	
 							</Col>
 						</Row>
-						<LunarLanderCanvas tick={tick} game={props.game}></LunarLanderCanvas>
+						<Row>
+							<LunarLanderCanvas tick={tick} game={props.game}></LunarLanderCanvas>
+						</Row>
+						<Row>
+							<div className="scoreBox">
+								<h5> SCORE = (100 - IMPACT SPEED) + (0.05 * REMAINING FUEL)</h5>
+							</div>
+						</Row>
 					</Col>
 					<Col>
 						<About abt={about.get("lunarlander")}/>

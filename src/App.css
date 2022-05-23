@@ -163,3 +163,12 @@ input.form-control-plaintext {
 .emph {
 	color: #21cc49;
 }
+
+.scoreBox {
+	text-align: center;
+	padding: 10px;
+}
+
+.disclaimer {
+	font-size: smaller;
+}
