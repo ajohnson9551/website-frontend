@@ -119,7 +119,7 @@ export const LunarLanderPage = (props: {game: LunarLanderGame}) => {
 						</Row>
 						<Row>
 							<div className="scoreBox">
-								<h5> SCORE = (100 - IMPACT SPEED) + (0.05 * REMAINING FUEL)</h5>
+								<h5> Score = (100 - Impact Speed) + (0.05 * Remaining Fuel)</h5>
 							</div>
 						</Row>
 					</Col>
