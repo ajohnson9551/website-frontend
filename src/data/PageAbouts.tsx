@@ -4,14 +4,14 @@ const mathDesc =
 <div>
 	<p>Here you can find a selection of math papers written by myself over the course of my education. Often papers were written alongside reading courses and as such references are sometimes not given - I can recommend supplementary texts upon request. The image above is a qualifying exam problem done on a blackboard sometime in 2019.</p>
 	<p>
-		My main mathematical interests are in set theory and model theory. At UCLA I passed the Basic, Algebra, and Logic qualifying exams and have studied most areas of modern mathematics. I also have several years experience as a TA for lower and upper division courses.
+		My main mathematical interests are in set theory and model theory. At UCLA I passed the Basic, Algebra, and Logic qualifying exams and also have coursework in analysis and other branches. I enjoy teaching and have seven years of experience as a TA.
 	</p>
 </div>;
 about.set("math", {imgPath: "images/math.jpg", desc: mathDesc});
 
 const llDesc = 
 <div>
-	<p>The autopilot for my lunar lander game was trained using an <a href="https://en.wikipedia.org/wiki/Evolutionary_algorithm" target="blank">evolutionary algorithm</a>. Each member of a population is scored based a provided fitness function, and the highest scoring members create children who inherit the "genes" (here, neural network parameters) of the parents with a small chance of mutation. Over several generations, the population's fitness will trend upward. Supervised training (e.g. gradient descent) is infeasible for this task since it is difficult to compute what small change in network parameters will improve the score. Of independent interest, evolutionary algorithms have <a href="https://projecteuler.net/problem=185" target="blank">diverse applications</a>.</p>
+	<p>The autopilot for my lunar lander game was trained using an <a href="https://en.wikipedia.org/wiki/Evolutionary_algorithm" target="blank">evolutionary algorithm</a>. Each member of a population is scored based a provided fitness function, and the highest scoring members create children who inherit the "genes" (here, neural network parameters) of the parents with a small chance of mutation. Over several generations, the population's fitness will trend upward. Supervised training (e.g. gradient descent) is infeasible for training the autopilot since it is difficult to correlate small changes in network parameters to final score. Of independent interest, evolutionary algorithms have <a href="https://projecteuler.net/problem=185" target="blank">diverse applications</a>.</p>
 
 	<p>Try to land as well as the autopilot! Use the arrow keys to control the lunar lander with autopilot disabled.</p>
 
@@ -40,7 +40,7 @@ about.set("cryptography", {imgPath: "images/cryptography.jpg", desc: cryptoDesc}
 
 const welcomeDesc = 
 <div className="welcomeText">
-	<p>Welcome! My name is Alexander Johnson, and I am a software developer with a background in mathematics. Here you will find interactive showcases of several of my projects and an assortment of math papers. This website was made using React is hosted using Amazon S3. Scripts must be enabled to view the interactive content!
+	<p>Welcome! My name is Alexander Johnson. I am a software developer with a background in mathematics. Here you will find interactive showcases of several of my projects and an assortment of mathematical writings. <a href="https://github.com/ajohnson9551/website-frontend" target="blank">This website</a> was made using React with TypeScript and is hosted using Amazon S3. Scripts must be enabled to view the interactive content!
 	</p>
 
 	<h5><a href="https://github.com/ajohnson9551" target="blank">GitHub</a></h5>

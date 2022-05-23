@@ -2,7 +2,7 @@ import { pdlModel } from "../../models/math/pdlModel";
 
 let list: pdlModel[] = [];
 
-const d1 = <p>A corrected proof of a lemma in a <a href="https://www.sciencedirect.com/science/article/pii/S0168007298000505">paper of Casanovas</a>. I discovered the mistake during a reading course and gave a correct proof using a different argument.</p>
+const d1 = <p>A corrected proof of a theorem in a paper on <a href="https://www.sciencedirect.com/science/article/pii/S0168007298000505" target="blank">type counting in simple theories</a>. I discovered the mistake during a reading course and gave a correct proof using a different argument.</p>
 list.push({path: "pdfs/Simple Theories Upper Bound.pdf", date: "May 2021", title: "An Upper Bound on Partial Types in Simple Theories", description: d1});
 
 const d2 = <p>A quick computation on the number of partial types in o-minimal theories. I show that it has the expected number.</p>
@@ -11,7 +11,7 @@ list.push({path: "pdfs/Partial Types in O-Minimal Theories.pdf", date: "Apr 2021
 const d3 = <p>An exposition on the proof that there are (at least) four classes of Keisler's Order, as was known in the 20th Century. Later it was shown that Keisler's Order has "maximal complexity".</p>
 list.push({path: "pdfs/Four Classes in Keisler's Order.pdf", date: "Mar 2021", title: "Four Classes of Keisler's Order", description: d3});
 
-const d4 = <p>The slides used for a graduate talk given at UCLA on ultraproducts. I also possess a recording of the talk itself, contact me if you are interested.</p>
+const d4 = <p>The slides used for a graduate talk given at UCLA on ultraproducts.</p>
 list.push({path: "pdfs/Ultraproducts Talk.pdf", date: "Nov 12, 2020", title: "Ultraproducts and U Slides", description: d4});
 
 const d5 = <p>My undergraduate thesis written at New College of Florida. I exposited on Morley's Categoricity Theorem and Shelah's Stability Spectrum Theorem, and translated Morley's "topological" definitions into Shelah's.</p>

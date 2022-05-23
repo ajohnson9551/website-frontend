@@ -8,6 +8,7 @@ import { MathPage } from "./pages/MathPage";
 import { LunarLanderPage } from "./pages/LunarLanderPage";
 import { CryptographyPage } from "./pages/CryptographyPage";
 import { LunarLanderGame } from "./mechanics/lunarlander/LunarLanderGame";
+import { ErrorPage } from "./pages/ErrorPage";
 
 function App() {
 	const game = new LunarLanderGame();
@@ -23,7 +24,7 @@ function App() {
 				<Route path="cryptography" element={<CryptographyPage />} />
 				<Route path="math" element={<MathPage />} />
 				<Route path="contact" element={<ContactPage />} />
-				<Route path="*" element={<WelcomePage />} />
+				<Route path="*" element={<ErrorPage />} />
 			</Route>
 		</Routes>
 		</BrowserRouter>

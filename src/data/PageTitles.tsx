@@ -18,4 +18,7 @@ title.set("digitrecognition", drTitle);
 const welcomeTitle = <div className="pageTitle"><h1>ALEXANDER <span className="emph">JOHNSON</span></h1></div>;
 title.set("welcome", welcomeTitle);
 
+const errorTitle = <div className="pageTitle"><h1>Page not found!</h1></div>;
+title.set("error", errorTitle);
+
 export default title;
