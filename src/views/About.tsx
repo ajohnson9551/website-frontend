@@ -2,14 +2,17 @@ import { Container, Col, Row } from "react-bootstrap";
 
 export const About = (props: {abt: {imgPath: string, desc: string, vert: boolean}}) => {
 
-	const content = props.abt.vert
+	// old formatting unused
+	const content = true
 		?
 		<Col>
 			<Row className="imageBox" md="auto">
 				<img src={props.abt.imgPath} className="responsiveImageCentered"/>
 			</Row>
-			<Row className="centerMe" md="auto">
-				{props.abt.desc}
+			<Row md="auto">
+				<Col className="centerMe">
+					{props.abt.desc}
+				</Col>
 			</Row>
 		</Col>
 		: 
