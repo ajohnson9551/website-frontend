@@ -10,6 +10,7 @@ import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import about from "../data/PageAbouts";
 import { About } from "../views/About";
 import title from "../data/PageTitles";
+import { DigitRecognitionCanvas } from "../views/digitrecognition/DigitRecognitionCanvas";
 
 export const DigitRecognitionPage = () => {
 	const trainingData = JSON.parse(trainingDataString);
@@ -191,10 +192,14 @@ export const DigitRecognitionPage = () => {
 							</Col>
 						</Row>
 						<Row>
-							<Grid 
+							{/* <Grid 
 								values={values}
 								setMouseDown={setMouseDown}
-								drawAt={drawAt}/>
+								drawAt={drawAt}/> */}
+							<DigitRecognitionCanvas 
+								values={values}
+								drawAt={drawAt}
+								setMouseDown={setMouseDown}/>
 						</Row>
 						<Row>
 							<RecognizerView guess={guess} guessReady={guessReady} demo={demoOn}/>

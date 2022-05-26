@@ -48,6 +48,16 @@ img {
 	user-select: none;
 }
 
+.drCanvasBox {
+	border-width: 3px;
+	border-color: black;
+	border-style: solid;
+	user-select: none;
+	max-width: 600px;
+	min-width: 200px;
+	background-color: rgb(33, 33, 36);
+}
+
 .drButtonBox {
 	margin: 10px;
 }
@@ -100,15 +110,15 @@ img {
 	background-color: rgb(33, 33, 36);
 }
 
-.row {
-	--bs-gutter-x: 0;
-	/* padding: 0px; */
-}
-
 .cell {
 	width: 0.5cm;
 	height: 0.5cm;
 	padding: 0px;
+}
+
+.row {
+	--bs-gutter-x: 0;
+	/* padding: 0px; */
 }
 
 .pdl {
