@@ -24,7 +24,13 @@ a:hover {
 
 .aboutBox {
 	padding: 20px;
-	min-width: 400px;
+	min-width: 500px;
+}
+
+@media (max-width: 500px) {
+	.aboutBox {
+		min-width: 250px;
+	}
 }
 
 .imageBox {
@@ -43,7 +49,7 @@ img {
 	border-color: black;
 	border-style: solid;
 	max-width: max-content;
-	min-width: 600px;
+	min-width: 400px;
 	padding: 0px;
 	user-select: none;
 }
@@ -54,8 +60,21 @@ img {
 	border-style: solid;
 	user-select: none;
 	max-width: 600px;
-	min-width: 200px;
+	min-width: 600px;
 	background-color: rgb(33, 33, 36);
+}
+
+@media (max-width: 500px) {
+	.canvasBox {
+		min-width: 250px;
+	}
+}
+
+@media (max-width: 700px) {
+	.drCanvasBox {
+		max-width: 500px;
+		min-width: 250px;
+	}
 }
 
 .drButtonBox {
