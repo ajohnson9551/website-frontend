@@ -38,7 +38,7 @@ const cryptoDesc =
 	
 
 	<div className="disclaimer">
-		<p>DISCLAIMER: Do not rely on this demo to secure sensitive data.</p>
+		<p>DISCLAIMER: Do not rely on this demo to secure sensitive data!</p>
 	</div>
 </div>;
 about.set("cryptography", {imgPath: "images/cryptography.jpg", desc: cryptoDesc, vert: false});
