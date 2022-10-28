@@ -53,7 +53,7 @@ export const ConfidenceResultsView = (props: {
 				<Col>
 					<Chart 
 					chartType="ComboChart"
-					width="150%"
+					width="800px"
 					height="600px"
 					data={data}
 					options={options}
