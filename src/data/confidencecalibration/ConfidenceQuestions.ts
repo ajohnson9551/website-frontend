@@ -153,8 +153,8 @@ export const ConfidenceQuestions: ConfidenceQuestion[] = [
 	},
 	{
 		category: ConfidenceQuestionCategory.DEMOGRAPHICS,
-		question: "In 2019, China had a larger population than India.",
-		realAnswer: true
+		question: "In 2019, India had a larger population than China.",
+		realAnswer: false
 	},
 	{
 		category: ConfidenceQuestionCategory.DEMOGRAPHICS,
