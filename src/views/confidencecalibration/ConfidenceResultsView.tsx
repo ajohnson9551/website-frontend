@@ -44,6 +44,19 @@ export const ConfidenceResultsView = (props: {
 		tooltip : { trigger: 'none' }
 	};
 
+	const detailCol = (confidence: number) => {
+		return (
+			<Col>
+				<Row>
+					<span>{confidence}% confidence:</span>
+				</Row>
+				<Row>
+				 	<p>{correctPerConfidence.get(confidence)}/{answeredPerConfidence.get(confidence)} correct</p>
+				</Row>
+			</Col>
+		);
+	}
+
 	const resultsBox = (
 		<Container className="calibrationBox">
 			<Row>
@@ -59,6 +72,9 @@ export const ConfidenceResultsView = (props: {
 					options={options}
 					/>
 				</Col>
+			</Row>
+			<Row>
+				{confidences.map((confidence: number) => detailCol(confidence))}
 			</Row>
 		</Container>
 	);

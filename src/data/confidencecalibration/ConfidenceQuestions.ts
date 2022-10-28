@@ -79,7 +79,7 @@ export const ConfidenceQuestions: ConfidenceQuestion[] = [
 	},
 	{
 		category: ConfidenceQuestionCategory.HISTORICAL_FIGURES,
-		question: "William Shakespear was born before Joan of Arc.",
+		question: "William Shakespeare was born before Joan of Arc.",
 		realAnswer: false
 	},
 	{
@@ -261,12 +261,66 @@ export const ConfidenceQuestions: ConfidenceQuestion[] = [
 	},
 	{
 		category: ConfidenceQuestionCategory.FOOD,
-		question: "Tomatoes belong to the nightshade family.",
-		realAnswer: true
+		question: "Serrano peppers are generally hotter than habanero peppers.",
+		realAnswer: false
 	},
 	{
 		category: ConfidenceQuestionCategory.FOOD,
 		question: "Green tea has caffeine.",
 		realAnswer: true
+	},
+
+
+
+
+	{
+		category: ConfidenceQuestionCategory.LITERATURE,
+		question: "The King James Bible has over a million words.",
+		realAnswer: false
+	},
+	{
+		category: ConfidenceQuestionCategory.LITERATURE,
+		question: "The Great Gatsby was written in the 1930s.",
+		realAnswer: false
+	},
+	{
+		category: ConfidenceQuestionCategory.LITERATURE,
+		question: "Wuthering Heights was written by Emily Bronte.",
+		realAnswer: true
+	},
+	{
+		category: ConfidenceQuestionCategory.LITERATURE,
+		question: "The Godfather was based off a book.",
+		realAnswer: true
+	},
+	{
+		category: ConfidenceQuestionCategory.LITERATURE,
+		question: "Fortuity means about the same thing as serendipity.",
+		realAnswer: true
+	},
+	{
+		category: ConfidenceQuestionCategory.LITERATURE,
+		question: "Capricious means about the same thing as luxurious.",
+		realAnswer: false
+	},
+	{
+		category: ConfidenceQuestionCategory.LITERATURE,
+		question: "Times New Roman is a sans-serif font.",
+		realAnswer: false
+	},
+	{
+		category: ConfidenceQuestionCategory.LITERATURE,
+		question: "Watchmen was published before The Handmaid's Tale.",
+		realAnswer: false
+	},
+	{
+		category: ConfidenceQuestionCategory.LITERATURE,
+		question: "Full Metal Jacket is under two hours long.",
+		realAnswer: true
+	},
+	{
+		category: ConfidenceQuestionCategory.LITERATURE,
+		question: "Tolkien wrote The Lord of the Rings during World War I.",
+		realAnswer: false
 	},
 ];

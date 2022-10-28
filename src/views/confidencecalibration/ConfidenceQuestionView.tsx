@@ -62,6 +62,7 @@ export const ConfidenceQuestionView = (props: {
 						<Col>
 							<Row>
 								<Button 
+									className="calibrationButton"
 									variant={props.selectedConfidence == confidence ? "primary" : "info"}
 									onClick={() => props.selectConfidence(confidence)}
 									disabled={props.selectedAnswer == 0}

@@ -62,7 +62,9 @@ img {
 
 .calibrationBox {
 	text-align: center;
+	min-width: 400px;
 }
+
 
 .canvasBox {
 	border-width: 3px;

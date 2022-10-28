@@ -64,11 +64,11 @@ about.set("digitrecognition", {imgPath:"images/digitrecognition.jpg", desc: drDe
 
 const confidenceDesc = 
 <div className="justifyMe">
-	<p>Use this tool to calibrate your inner sense of probabalistic confidence. For each of the statements given, answer 'true' or 'false' to the best of your ability, even if you have to guess. Then, rate your confidence in your answer between 50% and 100%. (50% confidence is a random guess, so you should switch answers if you're less confident than that!) You do not have to answer every question - results will be computed based on those you have answered.</p>
+	<p>Use this tool to calibrate your confidence in factual matters. For each of the statements given, answer 'true' or 'false' to the best of your ability, even if you have to guess. Then, rate your confidence in your answer between 50% and 100%. (50% confidence is a random guess, so you should switch answers if you're less confident than that!) You do not have to answer every question - results will be computed based on those you have answered.</p>
 
 	<p>The goal of this exercise is not to become more knowledgeable about the world, but rather to calibrate your confidence in what you believe. A well calibrated person will be correct about 70% of the time when answering questions for which they give 70% confidence.</p>
 
-	<p>Inspired by Chapter 6 of <i>The Scout Mindset</i> by <a href="https://juliagalef.com/">Julia Galef</a> (also the source of most of the questions). Photograph taken at the UCLA botanical garden.</p>
+	<p>Inspired by Chapter 6 of <i>The Scout Mindset</i> by <a href="https://en.wikipedia.org/wiki/Julia_Galef">Julia Galef</a> (also the source of most of the questions). Photograph taken at the UCLA botanical garden.</p>
 </div>;
 about.set("confidence", {imgPath:"images/confidencecalibration.jpg", desc: confidenceDesc, vert: false});
 
