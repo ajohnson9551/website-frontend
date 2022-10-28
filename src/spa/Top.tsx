@@ -23,6 +23,9 @@ export const Top = () => {
 						<Nav.Link as={Link} to="/math">Mathematics</Nav.Link>
 					</Nav.Item>
 					<Nav.Item>
+						<Nav.Link as={Link} to="/confidence">Confidence Calibration</Nav.Link>
+					</Nav.Item>
+					<Nav.Item>
 						<Nav.Link as={Link} to="/contact">Contact</Nav.Link>
 					</Nav.Item>
 				</Nav>

@@ -9,6 +9,7 @@ import { LunarLanderPage } from "./pages/LunarLanderPage";
 import { CryptographyPage } from "./pages/CryptographyPage";
 import { LunarLanderGame } from "./mechanics/lunarlander/LunarLanderGame";
 import { ErrorPage } from "./pages/ErrorPage";
+import { ConfidencePage } from "./pages/ConfidencePage";
 
 function App() {
 	const game = new LunarLanderGame();
@@ -23,6 +24,7 @@ function App() {
 				<Route path="lunarlander" element={<LunarLanderPage game={game}/>} />
 				<Route path="cryptography" element={<CryptographyPage />} />
 				<Route path="math" element={<MathPage />} />
+				<Route path="confidence" element={<ConfidencePage />} />
 				<Route path="contact" element={<ContactPage />} />
 				<Route path="*" element={<ErrorPage />} />
 			</Route>

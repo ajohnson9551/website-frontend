@@ -21,4 +21,7 @@ title.set("welcome", welcomeTitle);
 const errorTitle = <div className="pageTitle"><h1>Page not found!</h1></div>;
 title.set("error", errorTitle);
 
+const confidenceTitle = <div className="pageTitle"><h1>CONFIDENCE <span className="emph">CALIBRATION</span></h1></div>;
+title.set("confidence", confidenceTitle);
+
 export default title;
