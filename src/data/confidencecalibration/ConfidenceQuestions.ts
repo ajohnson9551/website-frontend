@@ -19,7 +19,7 @@ export const ConfidenceQuestions: ConfidenceQuestion[] = [
 	},
 	{
 		category: ConfidenceQuestionCategory.ANIMALS,
-		question: "Mammals and dinosaurs coexisted",
+		question: "Mammals and dinosaurs coexisted.",
 		realAnswer: true
 	},
 	{
@@ -178,13 +178,13 @@ export const ConfidenceQuestions: ConfidenceQuestion[] = [
 	},
 	{
 		category: ConfidenceQuestionCategory.SCIENCE,
-		question: "Brazz is made from iron and copper.",
+		question: "Brass is made from iron and copper.",
 		realAnswer: false
 	},
 	{
 		category: ConfidenceQuestionCategory.SCIENCE,
-		question: "One tablespoon of oil has more calories than one tablespoon of butter.",
-		realAnswer: true
+		question: "It takes light less than a second to get to the moon.",
+		realAnswer: false
 	},
 	{
 		category: ConfidenceQuestionCategory.SCIENCE,
@@ -215,5 +215,58 @@ export const ConfidenceQuestions: ConfidenceQuestion[] = [
 		category: ConfidenceQuestionCategory.SCIENCE,
 		question: "The atoms in a solid are more densely packed than the atoms in a gas.",
 		realAnswer: true
-	}
+	},
+
+
+
+	{
+		category: ConfidenceQuestionCategory.FOOD,
+		question: "Gnocchi is made from potatoes.",
+		realAnswer: true
+	},
+	{
+		category: ConfidenceQuestionCategory.FOOD,
+		question: "Honey is unsafe for newborns to eat because of bacteria.",
+		realAnswer: true
+	},
+	{
+		category: ConfidenceQuestionCategory.FOOD,
+		question: "The Apollo astronauts ate dehydrated ice cream on the way to the moon.",
+		realAnswer: false
+	},
+	{
+		category: ConfidenceQuestionCategory.FOOD,
+		question: "One tablespoon of oil has more calories than one tablespoon of butter.",
+		realAnswer: true
+	},
+	{
+		category: ConfidenceQuestionCategory.FOOD,
+		question: "Pop Tarts were invented before the Easy Bake Oven.",
+		realAnswer: false
+	},
+	{
+		category: ConfidenceQuestionCategory.FOOD,
+		question: "Pure gold is non toxic.",
+		realAnswer: true
+	},
+	{
+		category: ConfidenceQuestionCategory.FOOD,
+		question: "Cabernet Sauvignon is a type of red wine.",
+		realAnswer: true
+	},
+	{
+		category: ConfidenceQuestionCategory.FOOD,
+		question: "Sauerkraut is made by pickling cabbage in vinegar.",
+		realAnswer: false
+	},
+	{
+		category: ConfidenceQuestionCategory.FOOD,
+		question: "Tomatoes belong to the nightshade family.",
+		realAnswer: true
+	},
+	{
+		category: ConfidenceQuestionCategory.FOOD,
+		question: "Green tea has caffeine.",
+		realAnswer: true
+	},
 ];
