@@ -59,7 +59,7 @@ export const ConfidenceQuestions: ConfidenceQuestion[] = [
 
 	{
 		category: ConfidenceQuestionCategory.HISTORICAL_FIGURES,
-		question: "Julius Caesar was born before Confusius.",
+		question: "Julius Caesar was born before Confucius.",
 		realAnswer: false
 	},
 	{
