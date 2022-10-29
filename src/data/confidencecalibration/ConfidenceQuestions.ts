@@ -183,7 +183,7 @@ export const ConfidenceQuestions: ConfidenceQuestion[] = [
 	},
 	{
 		category: ConfidenceQuestionCategory.SCIENCE,
-		question: "It takes light less than a second to get to the moon.",
+		question: "It takes light less than a second to travel from the moon to Earth.",
 		realAnswer: false
 	},
 	{
