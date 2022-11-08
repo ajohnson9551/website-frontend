@@ -241,8 +241,8 @@ export const ConfidenceQuestions: ConfidenceQuestion[] = [
 	},
 	{
 		category: ConfidenceQuestionCategory.FOOD,
-		question: "Pop Tarts were invented before the Easy Bake Oven.",
-		realAnswer: false
+		question: "Bananas are radioactive.",
+		realAnswer: true
 	},
 	{
 		category: ConfidenceQuestionCategory.FOOD,
@@ -321,6 +321,60 @@ export const ConfidenceQuestions: ConfidenceQuestion[] = [
 	{
 		category: ConfidenceQuestionCategory.LITERATURE,
 		question: "Tolkien wrote The Lord of the Rings during World War I.",
+		realAnswer: false
+	},
+
+
+
+
+	{
+		category: ConfidenceQuestionCategory.INVENTIONS,
+		question: "Pop Tarts were invented before the Easy Bake Oven.",
+		realAnswer: false
+	},
+	{
+		category: ConfidenceQuestionCategory.INVENTIONS,
+		question: "Calculus was invented before the hot air balloon.",
+		realAnswer: true
+	},
+	{
+		category: ConfidenceQuestionCategory.INVENTIONS,
+		question: "Gunpowder was invented in China.",
+		realAnswer: true
+	},
+	{
+		category: ConfidenceQuestionCategory.INVENTIONS,
+		question: "Albert Einstein was part of the Manhattan Project.",
+		realAnswer: false
+	},
+	{
+		category: ConfidenceQuestionCategory.INVENTIONS,
+		question: "The blender was invented before the Band-Aid.",
+		realAnswer: true
+	},
+	{
+		category: ConfidenceQuestionCategory.INVENTIONS,
+		question: "The Nintento Wii was invented before the iPhone.",
+		realAnswer: true
+	},
+	{
+		category: ConfidenceQuestionCategory.INVENTIONS,
+		question: "The trireme was invented before glass blowing.",
+		realAnswer: true
+	},
+	{
+		category: ConfidenceQuestionCategory.INVENTIONS,
+		question: "Penicillin was discovered before a smallpox vaccine.",
+		realAnswer: false
+	},
+	{
+		category: ConfidenceQuestionCategory.INVENTIONS,
+		question: "Chess was invented before Go.",
+		realAnswer: false
+	},
+	{
+		category: ConfidenceQuestionCategory.INVENTIONS,
+		question: "The sound barrier was breached in a supersonic aircraft before the first rocket reached space.",
 		realAnswer: false
 	},
 ];

@@ -68,7 +68,7 @@ const confidenceDesc =
 
 	<p>The goal of this exercise is not to become more knowledgeable about the world, but rather to calibrate your confidence in what you believe. A well calibrated person will be correct about 70% of the time when answering questions for which they give 70% confidence.</p>
 
-	<p>Inspired by Chapter 6 of <i>The Scout Mindset</i> by <a href="https://en.wikipedia.org/wiki/Julia_Galef">Julia Galef</a> (also the source of most of the questions). Photograph taken at the UCLA botanical garden.</p>
+	<p>Inspired by Chapter 6 of <i>The Scout Mindset</i> by Julia Galef (also the source of most of the questions). Photograph taken at the UCLA botanical garden.</p>
 </div>;
 about.set("confidence", {imgPath:"images/confidencecalibration.jpg", desc: confidenceDesc, vert: false});
 
