@@ -349,7 +349,7 @@ export const ConfidenceQuestions: ConfidenceQuestion[] = [
 	},
 	{
 		category: ConfidenceQuestionCategory.INVENTIONS,
-		question: "The blender was invented before the Band-Aid.",
+		question: "The Band-Aid was invented before the blender.",
 		realAnswer: true
 	},
 	{
