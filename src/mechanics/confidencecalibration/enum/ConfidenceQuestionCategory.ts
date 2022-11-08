@@ -4,7 +4,8 @@ enum ConfidenceQuestionCategory {
 	DEMOGRAPHICS = "Demographics",
 	SCIENCE = "Science",
 	FOOD = "Food",
-	LITERATURE = "Literature"
+	LITERATURE = "Literature",
+	INVENTIONS = "Inventions"
 }
 
 export default ConfidenceQuestionCategory;
