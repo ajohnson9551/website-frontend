@@ -75,7 +75,7 @@ about.set("confidence", {imgPath:"images/confidencecalibration.jpg", desc: confi
 const contactDesc = 
 <div className="spaceMe centerMe">
 	<h5>
-		Email: <a href="mailto:ajohnson9551@gmail.com">ajohnson9551@gmail.com</a>
+		<a href="https://www.linkedin.com/in/ajohnson9551/">linkedin.com/in/ajohnson9551/</a>
 	</h5>
 </div>;
 about.set("contact", {imgPath:"images/contact.jpg", desc: contactDesc, vert: true});
