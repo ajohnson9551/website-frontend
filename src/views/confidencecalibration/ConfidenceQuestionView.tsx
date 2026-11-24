@@ -59,7 +59,7 @@ export const ConfidenceQuestionView = (props: {
 					</Row>
 					<Row>
 						{confidences.map((confidence: number) => {return (
-						<Col>
+						<Col xs={4} md key={confidence}>
 							<Row>
 								<Button 
 									className="calibrationButton"

@@ -64,7 +64,7 @@ export const LunarLanderPage = (props: {game: LunarLanderGame}) => {
 		<Form>
 			<Form.Check
 				type="switch"
-				id="custom-switch"
+				id="ll-run-switch"
 				label="Run Game"
 				checked={running.current}
 				onChange={() => setRunning(!running.current)}
@@ -76,7 +76,7 @@ export const LunarLanderPage = (props: {game: LunarLanderGame}) => {
 		<Form>
 			<Form.Check
 				type="switch"
-				id="custom-switch"
+				id="ll-autopilot-switch"
 				label="Enable Autopilot"
 				checked={autopilot.current}
 				onChange={() => setAutopilot(!autopilot.current)}
@@ -96,7 +96,7 @@ export const LunarLanderPage = (props: {game: LunarLanderGame}) => {
 					{title.get("lunarlander")}
 				</Row>
 				<Row>
-					<Col>
+					<Col lg>
 						<Row className="llButtonBox">
 							<Col>
 								<Row xs="auto" className="justify-content-md-center">
@@ -123,7 +123,7 @@ export const LunarLanderPage = (props: {game: LunarLanderGame}) => {
 							</div>
 						</Row>
 					</Col>
-					<Col>
+					<Col lg>
 						<About abt={about.get("lunarlander")}/>
 					</Col>
 				</Row>

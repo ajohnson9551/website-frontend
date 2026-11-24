@@ -7,7 +7,7 @@ export const About = (props: {abt: {imgPath: string, desc: string, vert: boolean
 		?
 		<Col>
 			<Row className="imageBox" md="auto">
-				<img src={props.abt.imgPath} className="responsiveImageCentered"/>
+				<img src={props.abt.imgPath} className="responsiveImageCentered" alt=""/>
 			</Row>
 			<Row md="auto">
 				<Col className="centerMe">
@@ -18,7 +18,7 @@ export const About = (props: {abt: {imgPath: string, desc: string, vert: boolean
 		: 
 		<Row>
 			<Col className="imageBox" md="auto">
-				<img src={props.abt.imgPath} className="responsiveImage"/>
+				<img src={props.abt.imgPath} className="responsiveImage" alt=""/>
 			</Col>
 			<Col md="auto">
 				{props.abt.desc}

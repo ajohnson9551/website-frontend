@@ -17,10 +17,10 @@ export const MathPage = () => {
 					{title.get("math")}
 				</Row>
 				<Row>
-					<Col>
+					<Col lg>
 						{links}
 					</Col>
-					<Col>
+					<Col lg>
 						<About abt={about.get("math")}/>
 					</Col>
 				</Row>

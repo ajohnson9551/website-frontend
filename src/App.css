@@ -6,8 +6,24 @@
 
 .pageTitle {
 	text-align: center;
-	padding: 20px;
+	padding: 28px 12px 20px;
 	color: white;
+}
+
+.pageTitle h1 {
+	letter-spacing: 0.05em;
+	font-size: calc(1.3rem + 1.5vw);
+	overflow-wrap: anywhere;
+}
+
+.pageTitle h1::after {
+	content: "";
+	display: block;
+	width: 60px;
+	height: 3px;
+	margin: 14px auto 0;
+	background-color: #21cc49;
+	border-radius: 2px;
 }
 
 .welcomeText {
@@ -24,12 +40,11 @@ a:hover {
 
 .aboutBox {
 	padding: 20px;
-	min-width: 500px;
 }
 
 @media (max-width: 500px) {
 	.aboutBox {
-		min-width: 250px;
+		padding: 12px 4px;
 	}
 }
 
@@ -39,9 +54,8 @@ a:hover {
 }
 
 img {
-	/* border-width: 2px;
-	border-color: rgb(24, 24, 24);
-	border-style: solid; */
+	border-radius: 6px;
+	box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
 }
 
 .redText {
@@ -62,7 +76,10 @@ img {
 
 .calibrationBox {
 	text-align: center;
-	min-width: 400px;
+}
+
+.calibrationButton {
+	width: 100%;
 }
 
 
@@ -70,10 +87,23 @@ img {
 	border-width: 3px;
 	border-color: black;
 	border-style: solid;
-	max-width: max-content;
-	min-width: 400px;
+	width: 100%;
+	max-width: 800px;
 	padding: 0px;
 	user-select: none;
+}
+
+.llCanvas {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+.drCanvas {
+	width: 100%;
+	height: auto;
+	display: block;
+	touch-action: none;
 }
 
 .drCanvasBox {
@@ -81,22 +111,9 @@ img {
 	border-color: black;
 	border-style: solid;
 	user-select: none;
+	width: 100%;
 	max-width: 600px;
-	min-width: 600px;
 	background-color: rgb(33, 33, 36);
-}
-
-@media (max-width: 500px) {
-	.canvasBox {
-		min-width: 250px;
-	}
-}
-
-@media (max-width: 700px) {
-	.drCanvasBox {
-		max-width: 500px;
-		min-width: 250px;
-	}
 }
 
 .drButtonBox {
@@ -137,6 +154,15 @@ img {
 	max-width: 800px;
 	text-align: justify;
 	text-justify: inter-word;
+	line-height: 1.6;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@media (max-width: 576px) {
+	.justifyMe {
+		text-align: left;
+	}
 }
 
 .grid {
@@ -163,7 +189,9 @@ img {
 }
 
 .pdl {
-	min-width: 400px;
+	padding: 4px 8px 8px;
+	margin-bottom: 8px;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 /* Chrome, Safari, Edge, Opera */
@@ -180,7 +208,6 @@ input[type=number] {
 
 .cryptBox {
 	padding: 10px;
-	min-width: 300px;
 }
 
 .cryptForm {
@@ -258,6 +285,10 @@ input.form-control-plaintext {
 
 .navbar-nav {
 	margin-left: 5px;
+}
+
+.navbar {
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 
 .navbar-toggler {

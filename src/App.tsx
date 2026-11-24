@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import { Routes, Route, HashRouter } from "react-router-dom";
 import './App.css';
 import { Whole } from "./spa/Whole";
@@ -12,7 +13,8 @@ import { ErrorPage } from "./pages/ErrorPage";
 import { ConfidencePage } from "./pages/ConfidencePage";
 
 function App() {
-	const game = new LunarLanderGame();
+	const gameRef = useRef<LunarLanderGame>(new LunarLanderGame());
+	const game = gameRef.current;
 
 	return (
 		<HashRouter>

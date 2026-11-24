@@ -22,12 +22,12 @@ export const CryptographyPage = () => {
 					{title.get("cryptography")}
 				</Row>
 				<Row>
-					<Col>
+					<Col lg>
 						<Row>
-							<Col>
+							<Col md>
 								<KeyGenForm keyGenFunc={keyGen}/>
 							</Col>
-							<Col>
+							<Col md>
 								<CryptographyForm
 									encodeFunc={encodeFunc}
 									decodeFunc={decodeFunc}
@@ -36,7 +36,7 @@ export const CryptographyPage = () => {
 							</Col>
 						</Row>
 					</Col>
-					<Col>
+					<Col lg>
 						<About abt={about.get("cryptography")}/>
 					</Col>
 				</Row>

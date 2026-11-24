@@ -7,7 +7,6 @@ export const DigitRecognitionCanvas = (props: {
 	setMouseDown: (b: boolean) => void}) => {
 
 	const canvasRef = useRef<HTMLCanvasElement | null>(null);
-	const canvasDivRef = useRef<HTMLDivElement | any>(null);
 
 	const [mousePos, setMousePos] = useState([-1, -1]);
 
@@ -35,14 +34,15 @@ export const DigitRecognitionCanvas = (props: {
 		
 	}
 
-	const registerMouse = (e: React.MouseEvent<HTMLCanvasElement, MouseEvent>) => {
-		if (canvasRef.current != null && canvasDivRef != null) {
+	const registerMouse = (e: React.PointerEvent<HTMLCanvasElement>) => {
+		if (canvasRef.current != null) {
+			const rect = canvasRef.current.getBoundingClientRect();
 			const newPos = [
-				Math.floor(28 * ((e.pageY - canvasRef.current.offsetTop) / canvasRef.current.getBoundingClientRect().height)), 
-				Math.floor(28 * ((e.pageX - canvasRef.current.offsetLeft) / canvasRef.current.getBoundingClientRect().width))];
+				Math.floor(28 * ((e.clientY - rect.top) / rect.height)),
+				Math.floor(28 * ((e.clientX - rect.left) / rect.width))];
 			if (mousePos[0] != newPos[0] || mousePos[1] != newPos[1]) {
 				setMousePos(newPos);
-				props.drawAt(mousePos[0], mousePos[1]);
+				props.drawAt(newPos[0], newPos[1]);
 			}
 		}
 	}
@@ -55,10 +55,12 @@ export const DigitRecognitionCanvas = (props: {
 				<Row>
 					<canvas 
 						ref={canvasRef} 
-						onMouseDown={(e) => {props.setMouseDown(true); registerMouse(e);}}
-						onMouseMove={(e) => {registerMouse(e)}}
-						onMouseUp={() => {props.setMouseDown(false)}}
-						onMouseLeave={() => {props.setMouseDown(false)}}/>
+						className="drCanvas"
+						onPointerDown={(e) => {props.setMouseDown(true); registerMouse(e);}}
+						onPointerMove={(e) => {registerMouse(e)}}
+						onPointerUp={() => {props.setMouseDown(false)}}
+						onPointerCancel={() => {props.setMouseDown(false)}}
+						onPointerLeave={() => {props.setMouseDown(false)}}/>
 				</Row>
 			</Container>
 		</>

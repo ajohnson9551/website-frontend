@@ -10,12 +10,8 @@ export const WelcomePage = () => {
 					{title.get("welcome")}
 				</Row>
 				<Row>
-					<Col>
-					</Col>
-					<Col md="10">
+					<Col lg={{span: 10, offset: 1}}>
 						<About abt={about.get("welcome")}/>
-					</Col>
-					<Col>
 					</Col>
 				</Row>
 		</Container>

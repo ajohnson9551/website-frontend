@@ -105,7 +105,7 @@ export const LunarLanderCanvas = (props: {tick: number, game: LunarLanderGame}) 
 		<>
 			<Container className="canvasBox">
 				<Row>
-					<canvas ref={canvasRef}/>
+					<canvas ref={canvasRef} className="llCanvas"/>
 				</Row>
 			</Container>
 		</>

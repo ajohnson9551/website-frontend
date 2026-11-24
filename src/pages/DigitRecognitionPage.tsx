@@ -143,7 +143,7 @@ export const DigitRecognitionPage = () => {
 		<Form>
 			<Form.Check
 				type="switch"
-				id="custom-switch"
+				id="dr-demo-switch"
 				label="Cycle Training Data"
 				checked={demoOn}
 				onChange={() => setDemoFunc(!demoOn)}
@@ -178,7 +178,7 @@ export const DigitRecognitionPage = () => {
 					{title.get("digitrecognition")}
 				</Row>
 				<Row>
-					<Col>
+					<Col lg>
 						<Row className="drButtonBox">
 							<Col>
 								<Row xs="auto" className="justify-content-md-center">
@@ -186,7 +186,7 @@ export const DigitRecognitionPage = () => {
 								</Row>
 							</Col>
 							<Col>
-								<Row xs="auto" className="justify-content-md-left">
+								<Row xs="auto" className="justify-content-start">
 									{demoModeSwitch}
 								</Row>
 							</Col>
@@ -205,7 +205,7 @@ export const DigitRecognitionPage = () => {
 							<RecognizerView guess={guess} guessReady={guessReady} demo={demoOn}/>
 						</Row>
 					</Col>
-					<Col>
+					<Col lg>
 						<About abt={about.get("digitrecognition")}/>
 					</Col>
 				</Row>

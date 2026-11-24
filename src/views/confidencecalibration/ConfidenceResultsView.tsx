@@ -46,7 +46,7 @@ export const ConfidenceResultsView = (props: {
 
 	const detailCol = (confidence: number) => {
 		return (
-			<Col>
+			<Col xs={4} md key={confidence}>
 				<Row>
 					<span>{confidence}% confidence:</span>
 				</Row>
@@ -66,14 +66,14 @@ export const ConfidenceResultsView = (props: {
 				<Col>
 					<Chart 
 					chartType="ComboChart"
-					width="800px"
-					height="600px"
+					width="100%"
+					height="450px"
 					data={data}
 					options={options}
 					/>
 				</Col>
 			</Row>
-			<Row>
+			<Row className="gy-2">
 				{confidences.map((confidence: number) => detailCol(confidence))}
 			</Row>
 		</Container>

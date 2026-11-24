@@ -94,7 +94,7 @@ export const ConfidencePage = () => {
 					{title.get("confidence")}
 				</Row>
 				<Row>
-					<Col className="calibrationBox">
+					<Col lg className="calibrationBox">
 						<Row>
 							{displayingResults ? resultsDisplay : questionDisplay}
 						</Row>
@@ -107,7 +107,7 @@ export const ConfidencePage = () => {
 							</Col>
 						</Row>
 					</Col>
-					<Col>
+					<Col lg>
 						<About abt={about.get("confidence")}/>	
 					</Col>
 				</Row>
